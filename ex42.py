@@ -1,52 +1,51 @@
 ## Animal is-a object (yes, sort of confusing) look at the extra credit
 class Animal(object):
-    def speak(self):
-		print "something"
-
+	pass
+		
 ## Dog is-a Aninmal
 class Dog(Animal):
 
-    def __init__(self, name):
+	def __init__(self, name):
         ## dog has-a name
-        self.name = name
+		self.name = name
 		
 	def speak(self):
-		print "Woof!"
+		print "%s: Woof!" % self.name
 
 ## Cat is-a Animal
 class Cat(Animal):
 
-    def __init__(self, name):
-        ## Cat has-a name
-        self.name = name
-
+	def __init__(self, name):
+		## Cat has-a name
+		self.name = name
+		
 	def speak(self):
-		print "Meow..."
+		print "%s: Meow..." % self.name
 		
 ## Person is-a object
 class Person(object):
 
-    def __init__(self, name):
-        ## Person has-a name
-        self.name = name
+	def __init__(self, name):
+		## Person has-a name
+		self.name = name
 
-        ## Person has-a pet of some kind
-        self.pet = None
-		
+		## Person has-a pet of some kind
+		self.pet = None
+	
 	def speak(self):
-		print "To be or not to be?"
+		return "%s: To be or not to be?" % self.name
 
 ## Employee is-a person
 class Employee(Person):
 
-    def __init__(self, name, salary):
-        ## ?? hmm what is this strange magic?
-        super(Employee, self).__init__(name)
-        ## Employee has-a salary
-        self.salary = salary
+	def __init__(self, name, salary):
+		## ?? hmm what is this strange magic?
+		super(Employee, self).__init__(name)
+		## Employee has-a salary
+		self.salary = salary
 	
 	def speak(self):
-		print "How may I help you?"
+		print "%s: How may I help you?" % self.name
 
 ## Fish is-a object
 class Fish(object):
@@ -90,5 +89,4 @@ harry = Halibut()
 
 rover.speak()
 satan.speak()
-#frank.speak()
-#frank.pet.speak()
+frank.speak()
