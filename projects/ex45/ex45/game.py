@@ -42,7 +42,7 @@ class Runner(object):
 		
 		current_room.enter()
 		
-class Blade_Room(Room):
+class BladeRoom(Room):
 
 	def enter(self, choices, answer):
 		print 'You walk into a cave. There are straight grooves cut into the walls.'
@@ -56,7 +56,7 @@ class Blade_Room(Room):
 	def name(self):
 		return 'blade_room'
 	
-class Name_Room(Room):
+class NameRoom(Room):
 
 	def enter(self, choices, answer):
 		print "You enter a room with a stone floor. Each stone has a letter on it. Where do you step?"
@@ -70,7 +70,7 @@ class Name_Room(Room):
 	def name(self):
 		return 'name_room'
 		
-class Bridge_Room(Room):
+class BridgeRoom(Room):
 
 	def enter(self, choices, answer):
 		print "There is an abyss in front of you with an opening on the other side. It's very far away."
@@ -84,7 +84,7 @@ class Bridge_Room(Room):
 	def name(self):
 		return 'bridge_room'
 
-class Grail_Room(Room):
+class GrailRoom(Room):
 
 	def enter(self, choices, answer):
 		print "There are 3 cups in front of you each in a different style. One is the cup of Christ."
@@ -107,10 +107,10 @@ class Dead(Room):
 class Map(object):
 
 	rooms = {
-		'blade_room':Blade_Room(),
-		'name_room':Name_Room(),
-		'bridge_room':Bridge_Room(),
-		'grail_room':Grail_Room(),
+		'blade_room':BladeRoom(),
+		'name_room':NameRoom(),
+		'bridge_room':BridgeRoom(),
+		'grail_room':GrailRoom(),
 		'dead':Dead()
 	}
 
