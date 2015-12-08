@@ -38,7 +38,13 @@ class GameEngine(object):
         
         # there is a bug here, can you fix it?
         if session.room and form.action:
-            session.room = session.room.go(form.action)
+            transition = session.room.go(form.action)
+            if transition == None:
+                transition = session.room.go('*')
+            if transition != None:
+                session.room = transition.room
+            else:
+                session.room = None
             
         web.seeother("/game")
         
